@@ -1,0 +1,16 @@
+name: run
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: [ "main" ]
+  schedule:
+    - cron:  '45 7 * * *'
+
+jobs:
+  # Build
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Install xmllint
+      run: sudo apt-get install -y htmlq
