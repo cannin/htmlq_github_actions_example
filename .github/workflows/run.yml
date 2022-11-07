@@ -12,8 +12,9 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
+    - name: Download htmlq
+      run: wget -O htmlq.tar.gz https://github.com/mgdm/htmlq/releases/latest/download/htmlq-x86_64-linux.tar.gz 
     - name: Install htmlq
-      run: wget -O htmlq.tar.gz https://github.com/mgdm/htmlq/releases/latest/download/htmlq-x86_64-linux.tar.gz \
-           sudo tar xf htmlq.tar.gz -C /usr/local/bin
+      run: sudo tar xf htmlq.tar.gz -C /usr/local/bin
     - name: Run check
       run: sh run.sh
